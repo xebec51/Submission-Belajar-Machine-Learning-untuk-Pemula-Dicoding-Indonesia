@@ -9,9 +9,9 @@
 Proyek ini bertujuan untuk mengaplikasikan konsep supervised learning dan unsupervised learning dalam membangun model machine learning. Berikut adalah langkah-langkah yang dilakukan dalam proyek ini:
 
 1. **Clustering (Unsupervised Learning):**
-   - Dataset tanpa label dikelompokkan menggunakan algoritma clustering (K-Means).
+   - Dataset tanpa label dikelompokkan menggunakan algoritma Gaussian Mixture Model (GMM).
    - Evaluasi dilakukan menggunakan Silhouette Score.
-   - Interpretasi cluster memberikan wawasan tentang pola dalam data.
+   - Interpretasi cluster memberikan wawasan tentang pola dalam data, seperti distribusi biaya, metode pembayaran, dan jenis pelanggan.
 
 2. **Klasifikasi (Supervised Learning):**
    - Dataset yang telah diberi label dari hasil clustering digunakan untuk membangun model klasifikasi.
@@ -24,7 +24,8 @@ Proyek ini bertujuan untuk mengaplikasikan konsep supervised learning dan unsupe
 
 - **Clustering_Submission_Akhir_BMLP_Muh. Rinaldi Ruslan.ipynb**: Notebook Python untuk proses clustering.
 - **Klasifikasi_Submission_Akhir_BMLP_Muh. Rinaldi Ruslan.ipynb**: Notebook Python untuk proses klasifikasi.
-- **Hasil_Clustering.csv**: Dataset hasil proses clustering, digunakan sebagai input untuk klasifikasi.
+- **Hasil_Clustering_Final.csv**: Dataset hasil proses clustering, digunakan sebagai input untuk klasifikasi.
+- **Hasil_Klasifikasi_Final.csv**: Dataset hasil prediksi klasifikasi, memuat label prediksi untuk data uji.
 - **Retail_Transactions_Dataset.csv**: Dataset awal tanpa label.
 
 ---
@@ -53,17 +54,19 @@ Proyek ini bertujuan untuk mengaplikasikan konsep supervised learning dan unsupe
 ## 📊 **Evaluasi Model**
 
 ### **Clustering**
-- **Algoritma**: K-Means
-- **Jumlah Cluster**: Optimal berdasarkan Silhouette Score.
-- **Silhouette Score**: Mencapai nilai di atas 0.55.
+- **Algoritma**: Gaussian Mixture Model (GMM)
+- **Jumlah Cluster**: 4
+- **Silhouette Score**: 0.661
 
 ### **Klasifikasi**
 - **Model**:
   - Logistic Regression
   - Random Forest
 - **Akurasi dan F1-Score**:
-  - Logistic Regression: 100%
-  - Random Forest: 100%
+  - Logistic Regression: 100% pada training dan testing set
+  - Random Forest: 100% pada training dan testing set
+- **Confusion Matrix**:
+  - Logistic Regression dan Random Forest berhasil memprediksi semua data dengan benar tanpa kesalahan.
 
 ---
 
@@ -83,7 +86,7 @@ Proyek ini bertujuan untuk mengaplikasikan konsep supervised learning dan unsupe
 ---
 
 ## 🛠️ **Catatan**
-Jika file besar seperti `Hasil_Clustering.csv` dan `Retail_Transactions_Dataset.csv` tidak terunduh secara otomatis, pastikan Anda telah menginstal Git LFS:
+Jika file besar seperti `Hasil_Clustering_Final.csv` dan `Retail_Transactions_Dataset.csv` tidak terunduh secara otomatis, pastikan Anda telah menginstal Git LFS:
 ```bash
 git lfs install
 git lfs pull
